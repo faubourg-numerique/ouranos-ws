@@ -1,0 +1,19 @@
+events {
+}
+
+http {
+    server_names_hash_bucket_size 128;
+
+    server {
+        server_name idm.example.com;
+
+        listen 443 ssl;
+
+        ssl_certificate /etc/letsencrypt/live/idm.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/idm.example.com/privkey.pem;
+
+        location / {
+            proxy_pass http://keyrock:3000;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+services:
+    mongo-db:
+        image: "mongo:${MONGO_DB_TAG}"
+        hostname: "mongo-db"
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: "root"
+            MONGO_INITDB_ROOT_PASSWORD: "root"
+        restart: "always"
+        volumes:
+            - "./mongo-db:/data/db"
+
+    mysql:
+        image: "mysql:${MYSQL_TAG}"
+        hostname: "mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: "root"
+        restart: "always"
+        volumes:
+            - "./mysql:/var/lib/mysql"
+
+    orion-ld:
+        image: "fiware/orion-ld:${ORION_LD_TAG}"
+        hostname: "orion-ld"
+        environment:
+            ORIONLD_EXPERIMENTAL: "TRUE"
+            ORIONLD_MONGO_HOST: "mongo-db"
+            ORIONLD_MONGO_USER: "root"
+            ORIONLD_MONGO_PASSWORD: "root"
+        restart: "always"
+        depends_on:
+            - "mongo-db"
+
+    keyrock:
+        image: "fiware/idm:${KEYROCK_TAG}"
+        hostname: "keyrock"
+        environment:
+            IDM_DB_HOST: "mysql"
+            IDM_DB_USER: "root"
+            IDM_DB_PASS: "root"
+            IDM_ADMIN_EMAIL: "${KEYROCK_ADMIN_EMAIL}"
+            IDM_ADMIN_PASS: "${KEYROCK_ADMIN_PASSWORD}"
+            IDM_CORS_ENABLED: true
+            IDM_CORS_ORIGIN: "*"
+            IDM_CORS_METHODS: "GET"
+        restart: "always"
+        depends_on:
+            - "mysql"
+
+    nginx:
+        image: "nginx:${NGINX_TAG}"
+        hostname: "nginx"
+        ports:
+            - "443:443"
+        restart: "always"
+        volumes:
+            - "./nginx.conf:/etc/nginx/nginx.conf"
+            - "/etc/letsencrypt:/etc/letsencrypt"
+        depends_on:
+            - "keyrock"
