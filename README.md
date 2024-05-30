@@ -106,12 +106,15 @@
     - Follow the steps to create the service account
 
         ![](images/9fe47d42-54c4-429a-a6bf-cbdfbc897fa1.png)
+
         ![](images/6de4ce1a-41a2-4f0e-a69d-e0b14664f62a.png)
+
         ![](images/e69eb6af-1d1f-42a4-919c-29b1be740e88.png)
 
     - Click on **Add Key** → **Create new key** in the **Keys** tab of the service account
 
         ![](images/0fd60344-c1c4-4ec8-9a0c-1de2b44cc7b8.png)
+
         ![](images/e69eb6af-1d1f-42a4-919c-29b1be740e88.png)
 
     - Select the **JSON** key type and click **CREATE**
@@ -139,12 +142,15 @@
     - Create an application
 
         ![](images/e7a0751d-3fc1-406b-bbaa-78d07ade3eba.png)
+
         ![](images/c4507ff8-9275-4e30-b275-864a05d70877.png)
+
         ![](images/ab0081bf-5ac2-4925-8991-dd25a162b1e5.png)
 
     - Create an **Admin** role
 
         ![](images/72bbf4dd-544b-4d8a-a008-fb50496488c5.png)
+
         ![](images/49d99c7f-3f13-4fd6-8b18-86484e6a2bcf.png)
 
     - Select the **Admin** role
@@ -154,6 +160,7 @@
     - Create a permission
 
         ![](images/f75caf35-d2e2-461e-9bfd-7f282b6fa4d1.png)
+
         ![](images/6bc9a291-a84d-4f59-8daf-df746eb5496e.png)
 
     - Repeat the operation for the **POST**, **PUT**, **PATCH** and **DELETE** methods
@@ -169,6 +176,7 @@
     - Deploy the OAuth2 Credentials section
 
         ![](images/3f0b10a7-0d2c-4c62-a615-e4a2d8e6295f.png)
+
         ![](images/da07810c-cfd1-4946-ab50-dc74ffa3ba39.png)
 
     - Update the `AUTHORIZATION_IDENTITY_MANAGER_APP_ID` variable of the **./config/ouranos-ws-api/.env** file with the application client id
@@ -193,17 +201,17 @@
 
 - Start the services
 
-```
-sudo docker compose up -d
-```
+    ```
+    sudo docker compose up -d
+    ```
 
 - Stop the services
 
-```
-sudo docker compose down
-```
+    ```
+    sudo docker compose down
+    ```
 
-## Documentation
+## Documentation (outdated)
 
 - [API documentation](https://faubourg-numerique.gitbook.io/ouranos-ws-api/)
 - [APP documentation](https://faubourg-numerique.gitbook.io/ouranos-ws-ui/)
