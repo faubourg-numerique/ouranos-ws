@@ -59,7 +59,7 @@ services:
             - "keyrock"
 
     ouranos-ws-api:
-        image: "ouranos-ws-api"
+        image: "dihfbn/ouranos-ws-api:${OURANOS_WS_API_TAG}"
         hostname: "ouranos-ws-api"
         restart: "always"
         volumes:
@@ -72,7 +72,7 @@ services:
             - "orion-ld"
 
     ouranos-ws-app:
-        image: "ouranos-ws-app"
+        image: "dihfbn/ouranos-ws-app:${OURANOS_WS_APP_TAG}"
         hostname: "ouranos-ws-app"
         restart: "always"
         volumes:
