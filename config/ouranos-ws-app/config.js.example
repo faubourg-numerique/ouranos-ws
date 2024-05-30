@@ -1,0 +1,8 @@
+window.apiUrl = "https://api.ouranos-ws.example.com/api";
+window.dataModelsUrl = "https://data-models.ouranos-ws.example.com/data-models";
+window.enabledModules = "i4trust";
+window.identityManagerAuthorizeUrl = "http://idm.example.com/oauth2/authorize";
+window.identityManagerRedirectUri = "http://app.ouranos-ws.example.com/callbacks/authentication";
+window.identityManagerClientId = "00000000-0000-0000-0000-000000000000";
+window.googleMapsApiKey = "000000000000000000000000000000000000000";
+window.googleServiceAccount = "ouranos-ws@example.iam.gserviceaccount.com";

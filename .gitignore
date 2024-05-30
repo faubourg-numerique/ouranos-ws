@@ -1,4 +1,12 @@
 .env
-/mongo-db
-/mysql
-/nginx.conf
+config.js
+nginx.conf
+service-account.json
+
+/mongo-db/
+/mysql/
+
+/ouranos-ws-data-model/
+/ouranos-ws-api-i4trust-module/
+
+/vendor/

@@ -57,3 +57,26 @@ services:
             - "/etc/letsencrypt:/etc/letsencrypt"
         depends_on:
             - "keyrock"
+
+    ouranos-ws-api:
+        image: "ouranos-ws-api"
+        hostname: "ouranos-ws-api"
+        restart: "always"
+        volumes:
+            - "./config/ouranos-ws-api/.env:/var/www/api/.env"
+            - "./ouranos-ws-data-model:/var/www/data-models/ouranos-ws/1"
+            - "./ouranos-ws-api-i4trust-module/I4Trust:/var/www/api/API/Modules/I4Trust"
+            - "./service-account.json:/var/www/service-account.json"
+        depends_on:
+            - "keyrock"
+            - "orion-ld"
+
+    ouranos-ws-app:
+        image: "ouranos-ws-app"
+        hostname: "ouranos-ws-app"
+        restart: "always"
+        volumes:
+            - "./config/ouranos-ws-app/config.js:/var/www/html/config.js"
+        depends_on:
+            - "keyrock"
+            - "ouranos-ws-api"

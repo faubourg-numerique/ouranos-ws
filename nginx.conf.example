@@ -5,6 +5,45 @@ http {
     server_names_hash_bucket_size 128;
 
     server {
+        server_name api.ouranos-ws.example.com;
+
+        listen 443 ssl;
+
+        ssl_certificate /etc/letsencrypt/live/api.ouranos-ws.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/api.ouranos-ws.example.com/privkey.pem;
+
+        location / {
+            proxy_pass http://ouranos-ws-api:8080;
+        }
+    }
+
+    server {
+        server_name app.ouranos-ws.example.com;
+
+        listen 443 ssl;
+
+        ssl_certificate /etc/letsencrypt/live/app.ouranos-ws.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/app.ouranos-ws.example.com/privkey.pem;
+
+        location / {
+            proxy_pass http://ouranos-ws-app:80;
+        }
+    }
+
+    server {
+        server_name data-models.ouranos-ws.example.com;
+
+        listen 443 ssl;
+
+        ssl_certificate /etc/letsencrypt/live/data-models.ouranos-ws.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/data-models.ouranos-ws.example.com/privkey.pem;
+
+        location / {
+            proxy_pass http://ouranos-ws-api:8000;
+        }
+    }
+
+    server {
         server_name idm.example.com;
 
         listen 443 ssl;

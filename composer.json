@@ -1,0 +1,12 @@
+{
+    "name": "faubourg-numerique/ouranos-ws",
+    "authors": [
+        {
+            "name": "Pierre Josselin",
+            "email": "pierre.josselin@oasc.fr"
+        }
+    ],
+    "require": {
+        "defuse/php-encryption": "^2.4"
+    }
+}
