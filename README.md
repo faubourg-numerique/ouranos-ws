@@ -31,6 +31,18 @@
     - `sudo certbot certonly --standalone -d data-models.ouranos-ws.example.com`
     - `sudo certbot certonly --standalone -d idm.example.com`
 
+- Clone this repository
+
+    ```
+    git clone https://github.com/faubourg-numerique/ouranos-ws.git
+    ```
+
+- Enter the cloned repository
+
+    ```
+    cd ./ouranos-ws
+    ```
+
 - Create and edit the docker compose environment file
 
     ```
