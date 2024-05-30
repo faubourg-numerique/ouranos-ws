@@ -7,11 +7,22 @@
 ### Prerequisites
 
 - [Debian](https://www.debian.org/)
-- [Docker Engine](https://docs.docker.com/engine/install/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker Engine](https://docs.docker.com/engine/install/debian/)
+- [Docker Compose](https://docs.docker.com/compose/install/) (included with Docker Engine)
 - [Certbot](https://certbot.eff.org/instructions?ws=other&os=debianbuster)
 - [PHP](https://www.php.net/downloads/)
+    ```
+    sudo apt install php-fpm
+    ```
 - [Composer](https://getcomposer.org/download/)
+- [Git](https://git-scm.com/)
+    ```
+    sudo apt install git
+    ```
+- Zip & Unzip
+    ```
+    sudo apt install zip unzip
+    ```
 
 > PHP and Composer are only used to generate the encryption key, what can be done on another machine.
 
@@ -65,7 +76,13 @@
 - Clone the ouranos-ws data model repository
 
     ```
-    git clone https://github.com/faubourg-numerique/ouranos-ws-data-model.git
+    git clone https://github.com/faubourg-numerique/ouranos-ws-data-model.git ./data-models/ouranos-ws/1
+    ```
+
+- Set Apache as the owner of the **data-models** directory
+
+    ```
+    sudo chown www-data:www-data -R ./data-models
     ```
 
 - Clone the ouranos-ws I4Trust module repository
@@ -105,7 +122,7 @@
 
     - Update the `window.googleMapsApiKey` variable of the **./config/ouranos-ws-app/config.js** file
 
-- Generate a Google Service Account (optional)
+- Create a Google Service Account (optional)
 
     > To be able to import and export entities from Google Sheets, a Google service account must be provided.
 
@@ -126,8 +143,6 @@
     - Click on **Add Key** → **Create new key** in the **Keys** tab of the service account
 
         ![](images/0fd60344-c1c4-4ec8-9a0c-1de2b44cc7b8.png)
-
-        ![](images/e69eb6af-1d1f-42a4-919c-29b1be740e88.png)
 
     - Select the **JSON** key type and click **CREATE**
 

@@ -64,7 +64,7 @@ services:
         restart: "always"
         volumes:
             - "./config/ouranos-ws-api/.env:/var/www/api/.env"
-            - "./ouranos-ws-data-model:/var/www/data-models/ouranos-ws/1"
+            - "./data-models:/var/www/data-models"
             - "./ouranos-ws-api-i4trust-module/I4Trust:/var/www/api/API/Modules/I4Trust"
             - "./service-account.json:/var/www/service-account.json"
         depends_on:
