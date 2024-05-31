@@ -10,21 +10,12 @@
 - [Docker Engine](https://docs.docker.com/engine/install/debian/)
 - [Docker Compose](https://docs.docker.com/compose/install/) (included with Docker Engine)
 - [Certbot](https://certbot.eff.org/instructions?ws=other&os=debianbuster)
-- [PHP](https://www.php.net/downloads/)
-    ```
-    sudo apt install php-fpm
-    ```
+- [PHP](https://www.php.net/downloads/) `sudo apt install php-fpm`
 - [Composer](https://getcomposer.org/download/)
-- [Git](https://git-scm.com/)
-    ```
-    sudo apt install git
-    ```
-- Zip & Unzip
-    ```
-    sudo apt install zip unzip
-    ```
+- [Git](https://git-scm.com/) `sudo apt install git`
+- Zip & Unzip `sudo apt install zip unzip`
 
-> PHP and Composer are only used to generate the encryption key, what can be done on another machine.
+> PHP and Composer are only used to generate the encryption key, what can be done on another machine. If you are doing it on the same machine, make sure you are using a version of PHP that does not include Apache, to avoid a conflict with the use of ports 80 and 443.
 
 ### Installation
 
