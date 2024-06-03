@@ -78,6 +78,7 @@
     ```
 
 - Install the ouranos-ws modules
+    > For the moment, each of the "data services", "web of things" and "dataspace connector" modules are required and must be installed and enabled for ouranos-ws to work.
 
     - Download the modules
 
