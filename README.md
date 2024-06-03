@@ -14,6 +14,7 @@
 - [Composer](https://getcomposer.org/download/)
 - [Git](https://git-scm.com/) `sudo apt install git`
 - Zip & Unzip `sudo apt install zip unzip`
+- Wget `sudo apt install wget`
 
 > PHP and Composer are only used to generate the encryption key, what can be done on another machine. If you are doing it on the same machine, make sure you are using a version of PHP that does not include Apache, to avoid a conflict with the use of ports 80 and 443.
 
@@ -76,10 +77,34 @@
     sudo chown www-data:www-data -R ./data-models
     ```
 
-- Clone the ouranos-ws I4Trust module repository
+- Install the ouranos-ws modules
+
+    - Download the modules
 
     ```
-    git clone https://github.com/faubourg-numerique/ouranos-ws-api-i4trust-module.git
+    wget -O "./ouranos-ws-api-data-services-module-1.0.1.zip" https://github.com/faubourg-numerique/ouranos-ws-api-data-services-module/archive/refs/tags/1.0.1.zip
+    ```
+
+    ```
+    wget -O "./ouranos-ws-api-wot-module-1.0.0.zip" https://github.com/faubourg-numerique/ouranos-ws-api-wot-module/archive/refs/tags/1.0.0.zip
+    ```
+
+    ```
+    wget -O "./ouranos-ws-api-dsc-module-1.0.0.zip" https://github.com/faubourg-numerique/ouranos-ws-api-dsc-module/archive/refs/tags/1.0.0.zip
+    ```
+
+    - Extract the modules
+
+    ```
+    unzip ./ouranos-ws-api-data-services-module-1.0.1.zip
+    ```
+
+    ```
+    unzip ./ouranos-ws-api-wot-module-1.0.0.zip
+    ```
+
+    ```
+    unzip ./ouranos-ws-api-dsc-module-1.0.0.zip
     ```
 
 - Generate an encryption key

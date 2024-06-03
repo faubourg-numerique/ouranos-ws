@@ -7,7 +7,14 @@ service-account.json
 /mysql/
 
 /ouranos-ws-data-model/
-/ouranos-ws-api-i4trust-module/
 /data-models
+
+/ouranos-ws-api-data-services-module-*.zip
+/ouranos-ws-api-wot-module-*.zip
+/ouranos-ws-api-dsc-module-*.zip
+
+/ouranos-ws-api-data-services-module-*/
+/ouranos-ws-api-wot-module-*/
+/ouranos-ws-api-dsc-module-*/
 
 /vendor/

@@ -1,6 +1,6 @@
 window.apiUrl = "https://api.ouranos-ws.example.com/api";
 window.dataModelsUrl = "https://data-models.ouranos-ws.example.com/data-models";
-window.enabledModules = "i4trust";
+window.enabledModules = "data-services,wot,dsc";
 window.identityManagerAuthorizeUrl = "https://idm.example.com/oauth2/authorize";
 window.identityManagerRedirectUri = "https://app.ouranos-ws.example.com/callbacks/authentication";
 window.identityManagerClientId = "00000000-0000-0000-0000-000000000000";

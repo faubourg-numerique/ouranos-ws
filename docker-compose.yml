@@ -65,7 +65,9 @@ services:
         volumes:
             - "./config/ouranos-ws-api/.env:/var/www/api/.env"
             - "./data-models:/var/www/data-models"
-            - "./ouranos-ws-api-i4trust-module/I4Trust:/var/www/api/API/Modules/I4Trust"
+            - "./ouranos-ws-api-data-services-module-1.0.1/DataServices:/var/www/api/API/Modules/DataServices"
+            - "./ouranos-ws-api-wot-module-1.0.0/WoT:/var/www/api/API/Modules/WoT"
+            - "./ouranos-ws-api-dsc-module-1.0.0/DSC:/var/www/api/API/Modules/DSC"
             - "./service-account.json:/var/www/service-account.json"
         depends_on:
             - "keyrock"
