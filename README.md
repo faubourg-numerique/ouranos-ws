@@ -6,7 +6,7 @@
 
 ### Prerequisites
 
-- [Debian](https://www.debian.org/)
+- [Debian](https://www.debian.org/) 12
 - [Docker Engine](https://docs.docker.com/engine/install/debian/)
 - [Docker Compose](https://docs.docker.com/compose/install/) (included with Docker Engine)
 - [Certbot](https://certbot.eff.org/instructions?ws=other&os=debianbuster)
