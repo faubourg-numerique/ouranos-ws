@@ -13,8 +13,8 @@
 - [PHP](https://www.php.net/downloads/) `sudo apt install php-fpm`
 - [Composer](https://getcomposer.org/download/)
 - [Git](https://git-scm.com/) `sudo apt install git`
-- Zip & Unzip `sudo apt install zip unzip`
-- Wget `sudo apt install wget`
+- zip & unzip `sudo apt install zip unzip`
+- wget `sudo apt install wget`
 
 > PHP and Composer are only used to generate the encryption key, what can be done on another machine. If you are doing it on the same machine, make sure you are using a version of PHP that does not include Apache, to avoid a conflict with the use of ports 80 and 443.
 
